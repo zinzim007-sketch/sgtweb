@@ -52,7 +52,7 @@ export default function About() {
 
           <div className="md:w-1/2">
             <img 
-              src="/src/assets/team.jpg"
+              src="/team.jpg"
               alt="Our story"
               className="rounded-xl shadow-2xl object-cover w-full h-80"
             />
@@ -244,7 +244,7 @@ export default function About() {
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-[#00d4ff] to-[#6b46ff] shadow-[0_6px_30px_rgba(107,70,255,0.18)]">
                   
-                  <img src="/src/assets/achievement-flag.svg" alt="achievement" className="w-7 h-7" />
+                  <img src="/achievement-flag.svg" alt="achievement" className="w-7 h-7" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Nedbank YouthX — 8th Place</h3>
@@ -261,7 +261,7 @@ export default function About() {
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-[#00d4ff] to-[#6b46ff] shadow-[0_6px_30px_rgba(107,70,255,0.18)]">
-                  <img src="/src/assets/achievement-flag.svg" alt="achievement" className="w-7 h-7" />
+                  <img src="/achievement-flag.svg" alt="achievement" className="w-7 h-7" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Ideas for Change — Winners 2024</h3>
@@ -278,7 +278,7 @@ export default function About() {
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-[#00d4ff] to-[#6b46ff] shadow-[0_6px_30px_rgba(107,70,255,0.18)]">
-                  <img src="/src/assets/achievement-flag.svg" alt="achievement" className="w-7 h-7" />
+                  <img src="/achievement-flag.svg" alt="achievement" className="w-7 h-7" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">RISP Regional Innovation Challenge — Winners 2025</h3>
@@ -302,23 +302,23 @@ export default function About() {
           <h3 className="text-3xl font-semibold mb-6">Partners</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 items-start">
             <div>
-              <img src="/src/assets/launchlab-logo.png" alt="LaunchLab" className="h-20 object-contain mb-3" />
+              <img src="/launchlab-logo.png" alt="LaunchLab" className="h-20 object-contain mb-3" />
               <p className="text-sgts-soft">LaunchLab helps founders turn ideas into impactful, scalable businesses.</p>
             </div>
             <div>
-              <img src="/src/assets/3bo-logo.png" alt="3BO" className="h-20 object-contain mb-3" />
+              <img src="/3bo-logo.png" alt="3BO" className="h-20 object-contain mb-3" />
               <p className="text-sgts-soft">3BO provides hardware for our panic button systems.</p>
             </div>
             <div>
-              <img src="/src/assets/RISP-logo.png" alt="RISP" className="h-20 object-contain mb-3" />
+              <img src="/RISP-logo.png" alt="RISP" className="h-20 object-contain mb-3" />
               <p className="text-sgts-soft">Support for researchers and early-stage startups.</p>
             </div>
             <div>
-              <img src="/src/assets/stelliesnetwork-logo.png" alt="Stellies Network" className="h-20 object-contain mb-3" />
+              <img src="/stelliesnetwork-logo.png" alt="Stellies Network" className="h-20 object-contain mb-3" />
               <p className="text-sgts-soft">Community of innovators in Stellenbosch.</p>
             </div>
             <div>
-              <img src="/src/assets/csir-logo.png" alt="CSIR" className="h-20 object-contain mb-3" />
+              <img src="/csir-logo.png" alt="CSIR" className="h-20 object-contain mb-3" />
               <p className="text-sgts-soft">National research body supporting our MVP work.</p>
             </div>
           </div>

@@ -10,7 +10,7 @@ export default function Team() {
         {/* CEO */}
         <div className="flex items-center gap-6">
           <img
-            src="/src/assets/tumelo.jpg"
+            src="/tumelo.jpg"
             alt="Tumelo Mokoena - CEO"
             className="w-40 h-40 rounded-2xl object-cover shadow-lg"
           />
@@ -23,7 +23,7 @@ export default function Team() {
         {/* alex */}
         <div className="flex items-center gap-6">
           <img
-            src="/src/assets/alexander.jpg"
+            src="/alexander.jpg"
             alt="Alexander Warrington"
             className="w-40 h-40 rounded-2xl object-cover shadow-lg"
           />
@@ -39,7 +39,7 @@ export default function Team() {
         {/* EEsa */}
         <div className="flex items-center gap-6">
           <img
-            src="/src/assets/eesa.jpg"
+            src="/eesa.jpg"
             alt="Eesa Sulaiman"
             className="w-40 h-40 rounded-2xl object-cover shadow-lg"
           />
@@ -52,7 +52,7 @@ export default function Team() {
         {/* zinzi */}
         <div className="flex items-center gap-6">
           <img
-            src="/src/assets/zinzi.jpg"
+            src="/zinzi.jpg"
             alt="Zinzi Mdhluli"
             className="w-40 h-40 rounded-2xl object-cover shadow-lg"
           />
@@ -65,7 +65,7 @@ export default function Team() {
         {/* hangaa */}
         <div className="flex items-center gap-6">
           <img
-            src="/src/assets/hangandiiwe.jpg"
+            src="/hangandiiwe.jpg"
             alt="Hangandiiwe Mamphaga"
             className="w-40 h-40 rounded-2xl object-cover shadow-lg"
           />

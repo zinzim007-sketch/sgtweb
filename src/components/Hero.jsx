@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="relative w-full h-screen overflow-hidden">
       {/* Background video (fixed stacking order) */}
       <video
-        src="/src/assets/background.mp4"
+        src="/background.mp4"
         autoPlay
         loop
         muted

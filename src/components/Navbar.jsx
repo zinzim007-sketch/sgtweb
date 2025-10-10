@@ -25,7 +25,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <img
-            src="/src/assets/logo.png"
+            src="/logo.png"
             alt="Safeguard logo"
             className="h-[70px] w-[100px] object-contain"
           />

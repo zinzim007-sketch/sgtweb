@@ -134,7 +134,7 @@ export default function Product() {
         >
           <div className="w-full md:w-3/4 rounded-xl overflow-hidden shadow-2xl border border-white/10">
             <video
-              src="/src/assets/demo.mp4"
+              src="/demo.mp4"
               className="w-full aspect-video"
               autoPlay
               muted
