@@ -25,6 +25,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
+      
 
       {/* Features / Overview Section */}
       <section className="container-custom py-24 text-center text-white">
