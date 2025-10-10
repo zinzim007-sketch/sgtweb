@@ -1,43 +1,42 @@
-import React, { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 export default function Navbar() {
-  const location = useLocation()
-  const isHome = location.pathname === '/'
-  const [scrolled, setScrolled] = useState(false)
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 z-30 transition-all duration-300 ${
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'backdrop-blur-md bg-[#03002E]/70 shadow-lg'
-          : 'bg-transparent'
+          ? "backdrop-blur-md bg-[#03002E]/70 shadow-lg"
+          : "bg-transparent"
       }`}
     >
-      <div className="container-custom flex items-center justify-between py-1 md:py-2">
+      <div className="container-custom flex items-center justify-between py-2">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <img
             src="/src/assets/logo.png"
             alt="Safeguard logo"
-            className="h-[90px]] w-[127px] object-contain"  // smaller logo
+            className="h-[70px] w-[100px] object-contain"
           />
         </Link>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-[15px]">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? 'text-sgts-blue' : 'text-white'
+              isActive ? "text-sgts-blue" : "text-white"
             }
           >
             Home
@@ -68,7 +67,7 @@ export default function Navbar() {
           <NavLink
             to="/product"
             className={({ isActive }) =>
-              isActive ? 'text-sgts-blue' : 'text-white'
+              isActive ? "text-sgts-blue" : "text-white"
             }
           >
             Product
@@ -86,12 +85,41 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button aria-label="Open menu" className="text-white text-2xl">
-            ☰
+          <button
+            aria-label="Toggle menu"
+            className="text-white text-3xl focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? "✕" : "☰"}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#03002E] text-white flex flex-col items-center py-6 space-y-5 shadow-lg z-40">
+          <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
+            Home
+          </NavLink>
+          <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
+            About
+          </NavLink>
+          <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
+            Contact
+          </NavLink>
+          <NavLink to="/product" onClick={() => setIsMenuOpen(false)}>
+            Product
+          </NavLink>
+          <Link
+            to="/contact"
+            onClick={() => setIsMenuOpen(false)}
+            className="bg-sgts-blue text-[#03002E] px-5 py-2 rounded-full font-semibold"
+          >
+            Book a Demo
+          </Link>
+        </div>
+      )}
     </header>
-  )
+  );
 }
 
