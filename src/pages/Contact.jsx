@@ -120,7 +120,7 @@ export default function Contact() {
 
           {/* Contact details */}
           <div className="mt-10 text-left text-sgts-soft">
-            <p>Email: <span className="text-white font-medium">tumelomokoena050@gmail.com</span></p>
+            <p>Email: <span className="text-white font-medium">safeguardtechnologies.za@gmail.com</span></p>
             <p>Phone number: <span className="text-white font-medium">+27 69 833 5696</span></p>
           </div>
         </div>
