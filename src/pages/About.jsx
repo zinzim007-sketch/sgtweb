@@ -32,25 +32,25 @@ export default function About() {
           <div className="md:w-1/2">
             <h2 className="text-4xl font-semibold mb-6">Our Story</h2>
             <p className="text-sgts-soft leading-relaxed mb-4">
-              SafeGuard Technologies was born in Stellenbosch from a simple belief:
+              Safeguard Technologies was born in Stellenbosch from a simple belief:
               <span className="text-white font-medium"> everyone deserves to feel safe.</span>
             </p>
             <p className="text-sgts-soft leading-relaxed mb-4">
               Africa is urbanizing faster than security can keep up. Fixed cameras
               leave blind spots, ground teams take 15+ minutes to respond, and by
               then the threat has already escalated or disappeared. We set out to
-              close that gap —
-              <span className="text-white font-medium"> not with more cameras, but with autonomous response.</span>
+              close that gap.
+              <span className="text-white font-medium"> Not with more cameras, but with autonomous response.</span>
             </p>
             <p className="text-sgts-soft leading-relaxed mb-4">
               That's why we're building <span className="text-white font-medium">Argus</span>,
               our own autonomous drone fleet, commanded by{' '}
-              <span className="text-white font-medium">SafeGuard OS</span> — the
+              <span className="text-white font-medium">Safeguard OS;</span> our the
               software platform that turns a <span className="text-white font-medium">panic button</span> press
               into a drone on scene in under 90 seconds.
             </p>
             <p className="text-white font-semibold mt-6">
-              SafeGuard Technologies. FASTER RESPONSE. INCREASED SAFETY. STRONGER SENSE OF SECURITY FOR ALL
+              Safeguard Technologies. FASTER RESPONSE. INCREASED SAFETY. STRONGER SENSE OF SECURITY FOR ALL
             </p>
           </div>
 
@@ -104,7 +104,7 @@ export default function About() {
             custom={1}
             className="text-4xl font-semibold mb-12 text-left"
           >
-            Roadmap — Mission Trajectory
+            Roadmap - Mission Trajectory
           </motion.h2>
 
           <div className="relative">
@@ -228,7 +228,7 @@ export default function About() {
             custom={1}
             className="text-4xl font-semibold mb-8 text-left"
           >
-            Achievements — Mission Log
+            Achievements
           </motion.h2>
 
           <motion.div
