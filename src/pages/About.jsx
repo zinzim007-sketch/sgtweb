@@ -36,14 +36,18 @@ export default function About() {
               <span className="text-white font-medium"> everyone deserves to feel safe.</span>
             </p>
             <p className="text-sgts-soft leading-relaxed mb-4">
-              After witnessing how quickly an ordinary moment can turn into an emergency,
-              we set out to build something that could
-              <span className="text-white font-medium"> act the moment help was needed.</span>
+              Africa is urbanizing faster than security can keep up. Fixed cameras
+              leave blind spots, ground teams take 15+ minutes to respond, and by
+              then the threat has already escalated or disappeared. We set out to
+              close that gap —
+              <span className="text-white font-medium"> not with more cameras, but with autonomous response.</span>
             </p>
             <p className="text-sgts-soft leading-relaxed mb-4">
-              Our multidisciplinary team came together with one goal:
-              to create a connected network of <span className="text-white font-medium">panic buttons</span> that
-              instantly <span className="text-white font-medium">dispatch drones</span> to where they’re needed most.
+              That's why we're building <span className="text-white font-medium">Argus</span>,
+              our own autonomous drone fleet, commanded by{' '}
+              <span className="text-white font-medium">SafeGuard OS</span> — the
+              software platform that turns a <span className="text-white font-medium">panic button</span> press
+              into a drone on scene in under 90 seconds.
             </p>
             <p className="text-white font-semibold mt-6">
               SafeGuard Technologies. FASTER RESPONSE. INCREASED SAFETY. STRONGER SENSE OF SECURITY FOR ALL
@@ -248,7 +252,7 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Nedbank YouthX — 8th Place</h3>
-                  <p className="text-sgts-soft text-sm">Recognized among South Africa’s top youth-led innovations.</p>
+                  <p className="text-sgts-soft text-sm">Recognized among South Africa's top youth-led innovations.</p>
                 </div>
               </div>
               <p className="text-sgts-soft">A strong early showing that validated our approach and opened mentorship opportunities.</p>

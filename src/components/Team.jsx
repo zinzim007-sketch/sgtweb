@@ -28,7 +28,7 @@ export default function Team() {
             className="w-40 h-40 rounded-2xl object-cover shadow-lg"
           />
           <div className="text-left">
-            <h3 className="text-xl font-semibold">Alexander Warringtons</h3>
+            <h3 className="text-xl font-semibold">Alexander Warrington</h3>
             <p className="text-gray-400">Systems & Mechanical Developer</p>
           </div>
         </div>
@@ -40,12 +40,12 @@ export default function Team() {
         <div className="flex items-center gap-6">
           <img
             src="/eesa.jpg"
-            alt="Eesa Sulaiman"
+            alt="Eesa Sulaiman - CTO"
             className="w-40 h-40 rounded-2xl object-cover shadow-lg"
           />
           <div className="text-left">
             <h3 className="text-lg font-semibold">Eesa Sulaiman</h3>
-            <p className="text-gray-400">Electronics & Design Developer</p>
+            <p className="text-gray-400">Chief Technology Officer</p>
           </div>
         </div>
 
