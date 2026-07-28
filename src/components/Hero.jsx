@@ -1,77 +1,98 @@
-import React from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Hero = () => {
+import drone from "../assets/drone.png";
+
+export default function Hero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      {/* Background video (fixed stacking order) */}
-      <video
-        src="/background.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-      />
+    <section className="relative bg-white overflow-hidden">
+      {/* Background glow */}
+      
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#03002E]/60 -z-10"></div>
+      <div className="container-custom min-h-[90vh] flex items-center pt-28 pb-20">
 
-      {/* Hero content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-        <motion.h1
-          className="text-5xl md:text-6xl font-semibold mb-4 tracking-tight"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
-          Autonomous Security. Instant Response.
-        </motion.h1>
+        <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
 
-        <motion.p
-          className="text-lg md:text-xl mb-8 max-w-2xl text-gray-200"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-        >
-          Faster response. Increased safety. Stronger sense of security for all.
-        </motion.p>
+          {/* LEFT */}
 
-        {/* Book a Demo Button (now links to Contact page) */}
-        <Link to="/contact">
-          <motion.button
-            className="relative bg-black text-white font-semibold py-3 px-8 rounded-lg overflow-hidden transition-transform transform hover:scale-105"
-            initial={{ opacity: 0, y: 20 }}
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
-            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.7 }}
           >
-            <motion.span
-              className="absolute inset-0 bg-gradient-to-r from-[#00BFFF] via-[#3399FF] to-[#00BFFF] opacity-50 blur-xl rounded-lg"
-              animate={{ opacity: [0.3, 0.7, 0.3] }}
+            <p className="section-label">
+              SAFEGUARD TECHNOLOGIES.
+            </p>
+
+            <h1 className="mt-5 font-bold leading-[0.95] tracking-[-0.04em] text-slate-900">
+              AUTONOMOUS
+              <br />
+              AERIAL
+              <br />
+              SECURITY.
+            </h1>
+            
+            <h2 className="mt-2 text-4xl font-light tracking-tight text-slate-500">
+              for Africa.
+            </h2>
+
+            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600">
+              SafeGuard combines autonomous drones, intelligent detection and real-time situational awareness to
+              protect people, infrastructure and critical assets.
+              
+            </p>
+
+            <div className="flex flex-wrap gap-4 mt-10">
+
+              <Link
+                to="/contact"
+                className="btn btn-primary"
+              >
+                Book a Demo
+                <ArrowRight size={18} />
+              </Link>
+
+              <Link
+                to="/product"
+                className="btn btn-secondary"
+              >
+                Learn More
+              </Link>
+
+            </div>
+
+          </motion.div>
+
+          {/* RIGHT */}
+
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="relative flex justify-center"
+          >
+
+            <motion.img
+              src={drone}
+              alt="SafeGuard autonomous drone"
+              className="w-full max-w-[800px] drop-shadow-2xl select-none"
+              animate={{
+                y: [0, -6, 0],
+              }}
               transition={{
-                duration: 2,
+                duration: 5,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
+              draggable={false}
             />
-            <span className="relative z-10">Book a Demo</span>
-          </motion.button>
-        </Link>
 
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 text-white text-2xl"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          ↓
-        </motion.div>
+          </motion.div>
+
+        </div>
+
       </div>
     </section>
   );
-};
-
-export default Hero;
-
+}

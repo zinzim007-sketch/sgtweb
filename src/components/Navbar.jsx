@@ -1,125 +1,168 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, X, ArrowRight } from "lucide-react";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const location = useLocation();
-  const isHome = location.pathname === "/";
+
   const [scrolled, setScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const closeMenu = () => setMobileOpen(false);
+
+  const linkClass = ({ isActive }) =>
+    `transition-colors duration-200 ${
+      isActive
+        ? "text-blue-600 font-semibold"
+        : scrolled || !isHome
+        ? "text-slate-800 hover:text-blue-600"
+        //: "text-white hover:text-blue-200"
+        : "text-slate-800 hover:text-blue-600"
+    }`;
+
   return (
-    <header
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-md bg-[#03002E]/70 shadow-lg"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container-custom flex items-center justify-between py-2">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <img
-            src="/logo.png"
-            alt="Safeguard logo"
-            className="h-[70px] w-[100px] object-contain"
-          />
-        </Link>
+    <>
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          scrolled || !isHome
+            ? "bg-white/90 backdrop-blur-xl shadow-sm border-b border-slate-200"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="container-custom h-24 flex items-center justify-between">
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 text-[15px]">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "text-sgts-blue" : "text-white"
-            }
-          >
-            Home
-          </NavLink>
+          {/* Logo */}
 
-          <div className="relative group">
-            <button className="text-white">Company ▾</button>
-            <div
-              className="absolute right-0 mt-1 w-40 bg-[#03002E] border border-gray-700 rounded shadow-lg 
-              opacity-0 invisible group-hover:opacity-100 group-hover:visible hover:opacity-100 hover:visible
-              transition-all duration-200 ease-out transform translate-y-1 group-hover:translate-y-0 hover:translate-y-0"
-            >
-              <Link
-                to="/about"
-                className="block px-4 py-2 text-sm text-white hover:bg-slate-800"
-              >
-                About
-              </Link>
-              <Link
-                to="/contact"
-                className="block px-4 py-2 text-sm text-white hover:bg-slate-800"
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
+          <Link to="/" className="flex items-center">
+            <img
+              src={logo}
+              alt="SafeGuard Technologies"
+              className="h-14 w-auto object-contain"
+            />
+          </Link>
 
-          <NavLink
-            to="/product"
-            className={({ isActive }) =>
-              isActive ? "text-sgts-blue" : "text-white"
-            }
-          >
-            Product
-          </NavLink>
+          {/* Desktop Navigation */}
 
-          {!isHome && (
+          <nav className="hidden lg:flex items-center gap-10 text-[15px] font-medium">
+
+            <NavLink to="/" className={linkClass}>
+              Home
+            </NavLink>
+
+            <NavLink to="/product" className={linkClass}>
+              Product
+            </NavLink>
+
+            <NavLink to="/about" className={linkClass}>
+              Company
+            </NavLink>
+
+            <NavLink to="/contact" className={linkClass}>
+              Contact
+            </NavLink>
+
+          </nav>
+
+          {/* Desktop CTA */}
+
+          <div className="hidden lg:block">
+
             <Link
               to="/contact"
-              className="bg-black text-white px-4 py-1.5 rounded-full font-medium ml-2 hover:bg-[#111] transition"
+              className={`inline-flex items-center gap-2 px-5 py-3 rounded-2xl font-semibold transition-all duration-300 ${
+                scrolled || !isHome
+                  ? "bg-slate-900 text-white hover:bg-blue-600"
+                  //: "bg-white text-slate-900 hover:bg-blue-50"
+                  : "bg-slate-900 text-white hover:bg-blue-600"
+              }`}
             >
               Book a Demo
+
+              <ArrowRight size={18} />
             </Link>
-          )}
-        </nav>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
+          </div>
+
+          {/* Mobile Button */}
+
           <button
-            aria-label="Toggle menu"
-            className="text-white text-3xl focus:outline-none"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className={`lg:hidden transition ${
+              scrolled || !isHome ? "text-slate-900" : "text-white"
+            }`}
           >
-            {isMenuOpen ? "✕" : "☰"}
+            {mobileOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
-        </div>
-      </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#03002E] text-white flex flex-col items-center py-6 space-y-5 shadow-lg z-40">
-          <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
-            Home
-          </NavLink>
-          <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
-            About
-          </NavLink>
-          <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
-            Contact
-          </NavLink>
-          <NavLink to="/product" onClick={() => setIsMenuOpen(false)}>
-            Product
-          </NavLink>
-          <Link
-            to="/contact"
-            onClick={() => setIsMenuOpen(false)}
-            className="bg-sgts-blue text-[#03002E] px-5 py-2 rounded-full font-semibold"
-          >
-            Book a Demo
-          </Link>
+        </div>
+      </header>
+
+      {/* Mobile Menu */}
+
+      {mobileOpen && (
+        <div className="fixed top-24 left-0 right-0 bg-white border-b border-slate-200 shadow-xl lg:hidden z-40">
+
+          <div className="container-custom py-8 flex flex-col">
+
+            <NavLink
+              to="/"
+              onClick={closeMenu}
+              className="py-3 text-slate-800 font-medium"
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/product"
+              onClick={closeMenu}
+              className="py-3 text-slate-800 font-medium"
+            >
+              Product
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              onClick={closeMenu}
+              className="py-3 text-slate-800 font-medium"
+            >
+              Company
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              onClick={closeMenu}
+              className="py-3 text-slate-800 font-medium"
+            >
+              Contact
+            </NavLink>
+
+            <Link
+              to="/contact"
+              onClick={closeMenu}
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 text-white py-4 font-semibold hover:bg-blue-600 transition"
+            >
+              Book a Demo
+
+              <ArrowRight size={18} />
+            </Link>
+
+          </div>
+
         </div>
       )}
-    </header>
+    </>
   );
 }
-

@@ -6,10 +6,13 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Product from './pages/Product'
 import Contact from './pages/Contact'
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App(){
   return (
     <div className="min-h-screen flex flex-col">
+
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
         <Routes>

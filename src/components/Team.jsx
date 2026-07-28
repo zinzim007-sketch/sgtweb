@@ -1,80 +1,109 @@
-import React from 'react'
+import { motion } from "framer-motion";
+
+import tumelo from "../assets/tumelo.jpg";
+import eesa from "../assets/eesa.jpg";
+import alexander from "../assets/alexander.jpg";
+import zinzi from "../assets/zinzi.jpg";
+import hangandiiwe from "../assets/hangandiiwe.jpg";
+
+const members = [
+  {
+    name: "Tumelo Mokoena",
+    role: "Chief Executive Officer",
+    image: tumelo,
+  },
+  {
+    name: "Eesa Sulaiman",
+    role: "Chief Technology Officer",
+    image: eesa,
+  },
+  {
+    name: "Alexander Warrington",
+    role: "Systems & Mechanical Developer",
+    image: alexander,
+  },
+  {
+    name: "Zinzi Mdhluli",
+    role: "Software & Backend Developer",
+    image: zinzi,
+  },
+  {
+    name: "Hangandiiwe Mamphaga",
+    role: "Finance & Operations Lead",
+    image: hangandiiwe,
+  },
+];
 
 export default function Team() {
   return (
-    <section className="py-24 bg-[#010122] text-white">
-      
+    <section className="py-20 bg-white">
 
-      {/* Top Row  */}
-      <div className="container-custom grid md:grid-cols-2 gap-12 mb-16">
-        {/* CEO */}
-        <div className="flex items-center gap-6">
-          <img
-            src="/tumelo.jpg"
-            alt="Tumelo Mokoena - CEO"
-            className="w-40 h-40 rounded-2xl object-cover shadow-lg"
-          />
-          <div className="text-left">
-            <h3 className="text-xl font-semibold">Tumelo Mokoena</h3>
-            <p className="text-gray-400">Chief Executive Officer</p>
-          </div>
+      <div className="container-custom">
+
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-2xl"
+        >
+          <p className="section-label eyebrow">
+            OUR TEAM
+          </p>
+
+          <h2 className="mt-4 text-5xl font-bold tracking-tight">
+            Meet the people behind SafeGuard.
+          </h2>
+
+          <p className="hero-text mt-6">
+            A multidisciplinary team bringing together expertise in
+            autonomous systems, software engineering, finance and
+            business strategy.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-16">
+
+          {members.map((member, index) => (
+
+            <motion.div
+              key={member.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.08 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+
+              <div className="overflow-hidden rounded-xl bg-slate-100 aspect-[4/5]">
+
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
+                />
+
+              </div>
+
+              <h3 className="mt-4 text-lg font-semibold text-slate-900 leading-snug">
+
+                {member.name}
+
+              </h3>
+
+              <p className="mt-1 text-sm text-slate-500 leading-relaxed">
+
+                {member.role}
+
+              </p>
+
+            </motion.div>
+
+          ))}
+
         </div>
 
-        {/* alex */}
-        <div className="flex items-center gap-6">
-          <img
-            src="/alexander.jpg"
-            alt="Alexander Warrington"
-            className="w-40 h-40 rounded-2xl object-cover shadow-lg"
-          />
-          <div className="text-left">
-            <h3 className="text-xl font-semibold">Alexander Warrington</h3>
-            <p className="text-gray-400">Systems & Mechanical Developer</p>
-          </div>
-        </div>
       </div>
 
-      {/* Bottom Row – Team */}
-      <div className="container-custom grid md:grid-cols-3 gap-12">
-        {/* EEsa */}
-        <div className="flex items-center gap-6">
-          <img
-            src="/eesa.jpg"
-            alt="Eesa Sulaiman - CTO"
-            className="w-40 h-40 rounded-2xl object-cover shadow-lg"
-          />
-          <div className="text-left">
-            <h3 className="text-lg font-semibold">Eesa Sulaiman</h3>
-            <p className="text-gray-400">Chief Technology Officer</p>
-          </div>
-        </div>
-
-        {/* zinzi */}
-        <div className="flex items-center gap-6">
-          <img
-            src="/zinzi.jpg"
-            alt="Zinzi Mdhluli"
-            className="w-40 h-40 rounded-2xl object-cover shadow-lg"
-          />
-          <div className="text-left">
-            <h3 className="text-lg font-semibold">Zinzi Mdhluli</h3>
-            <p className="text-gray-400">Software & Backend Developer</p>
-          </div>
-        </div>
-
-        {/* hangaa */}
-        <div className="flex items-center gap-6">
-          <img
-            src="/hangandiiwe.jpg"
-            alt="Hangandiiwe Mamphaga"
-            className="w-40 h-40 rounded-2xl object-cover shadow-lg"
-          />
-          <div className="text-left">
-            <h3 className="text-lg font-semibold">Hangandiiwe Mamphaga</h3>
-            <p className="text-gray-400">Finance & Operations Lead</p>
-          </div>
-        </div>
-      </div>
     </section>
-  )
+  );
 }
