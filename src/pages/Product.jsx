@@ -128,7 +128,7 @@ export default function Product() {
 
               <p className="mt-4 text-slate-600">
                 A unified operating system that coordinates
-                missions, operators and autonomous assets.
+                missions, operators and autonomous assets. It is customisable to the clients needs, and integratable to existing systems.
               </p>
 
             </div>

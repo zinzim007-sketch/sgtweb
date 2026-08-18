@@ -140,7 +140,7 @@ export default function Contact() {
                   </p>
 
                   <p className="mt-2 text-xl">
-                    safeguardtechnologies.za@gmail.com
+                    info@safeguardtechno.com
                   </p>
 
                 </div>
