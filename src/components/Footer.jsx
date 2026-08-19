@@ -89,7 +89,7 @@ export default function Footer() {
 
             <div className="space-y-4 text-slate-400">
 
-              <p>tumelomokoena@safeguardtechno.com</p>
+              <p>info@safeguardtechno.com</p>
 
               <p>Stellenbosch, South Africa</p>
               <Link

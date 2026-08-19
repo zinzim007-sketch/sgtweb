@@ -19,7 +19,7 @@ app.post("/api/contact", async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: "SafeGuard Technologies <tumelomokoena@safeguardtechno.com>",
+      from: "SafeGuard Technologies <info@safeguardtechno.com>",
       to: process.env.RECEIVER_EMAIL, // this will send to info@safeguardtechno.com
       subject: `New message from ${name}`,
       text: `From: ${name}\nEmail: ${email}\n\n${message}`,
