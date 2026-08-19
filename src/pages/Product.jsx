@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import dashboard from "../assets/dashboard.png";
-import drone from "../assets/drone.png";
+import drone from "../assets/argus.png";
 import CTASection from "../components/CTASection";
 
 export default function Product() {
