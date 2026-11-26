@@ -161,14 +161,7 @@ export default function Contact() {
 
                 <div>
 
-                  <p className="text-sm uppercase tracking-[0.25em] text-blue-600">
-                    Book a Demo
-                  </p>
-
-                  <p className="mt-2 text-slate-600 leading-8">
-                    Experience SafeGuardOS and ARGUS in action.
-                  </p>
-
+                  
                 </div>
 
               </div>
